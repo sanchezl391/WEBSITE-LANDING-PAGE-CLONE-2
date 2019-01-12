@@ -1,0 +1,101 @@
+
+//- Header CSS
+style.
+    @keyframes menuDropdownSlideDown {
+        from {
+            height: calc(65px - 30px);
+        }
+        to {
+            height: 300px;
+        }
+    }
+    @keyframes menuDropdownSlideUp {
+        from {
+            height: 300px;
+        }
+        to {
+            height: calc(65px - 30px);
+        }
+    }
+    header{
+        background-color: #2f3640;
+        display: flex;
+        flex-direction: column;
+        padding: 15px 90px;
+        position: absolute;
+        width: calc(100% - 180px);
+    }
+    header .pageSections{
+        display: none;
+    }
+    .headerTopRow {
+        display: flex;
+        justify-content: space-between;
+    }
+    header button{
+        height: 35px;
+    }
+    ul.pageSections {
+        list-style: none;
+        padding-left: 0;
+        justify-content: space-between;
+        height: 100%;
+    }
+    ul.pageSection li {
+        margin-bottom: 10px;
+        padding: 0;
+    }
+    .pageSections a{
+        color:white;
+        text-decoration: none;
+    }
+    .pageSections li:hover {
+        cursor: pointer;
+    }
+//- End Of Header CSS
+//- Header JS
+script. 
+    let isMenuBtnClicked = false;
+    
+    function handleMenuBtnClicked(e) {
+        isMenuBtnClicked = !isMenuBtnClicked;
+        let headerStyle ='';
+        let pageSectionsStyle ='';
+
+        if(isMenuBtnClicked){
+            headerStyle = 'animation-fill-mode: forwards; animation-duration: .5s; animation-name: menuDropdownSlideDown;';
+            pageSectionsStyle = 'display: flex; flex-direction: column';
+        } 
+        else {
+            headerStyle = 'animation-fill-mode: forwards; animation-duration: .5s; animation-name: menuDropdownSlideUp;';
+            pageSectionsStyle = 'display: none';
+        }
+
+        let headerEl = document.getElementsByTagName('header')[0];
+        let pageSectionsEl = document.getElementsByClassName('pageSections')[0];  
+
+        headerEl.style = headerStyle;
+        pageSectionsEl.style = pageSectionsStyle;
+    }
+//- End of Header JS
+
+
+
+//- Header HTML
+header#header
+    .headerTopRow
+        a(href='#header' class='sm-txt cursive') Modern Landing Page
+        button(class='btn' onclick="handleMenuBtnClicked(this)") MENU
+            i(class='fas fa-bars')
+    ul(class='pageSections sans-serif')
+        li 
+            a(href='#services') SERVICES
+        li 
+            a(href='#portfolio') PORTFOLIO
+        li
+            a(href='#services') ABOUT
+        li 
+            a(href='#team') TEAM
+        li 
+            a(href='#contact') CONTACT
+        

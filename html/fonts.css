@@ -1,0 +1,56 @@
+.xxl-txt {
+    font-size: 100px;
+}
+.xl-txt {
+    font-size: 80px;
+}
+.l-txt {
+    font-size: 60px;
+}
+.md-txt {
+    font-size: 40px;
+}
+.sm-txt {
+    font-size: 20px;
+}
+.xs-txt {
+    font-size: 15px;
+}
+.cursive{
+    font-family: 'Charm', cursive;
+}
+.sans-serif{
+    font-family: 'Oxygen', sans-serif;
+}
+.serif{
+    font-family: 'Crimson Text', sans-serif;
+}
+h1, h2, h3, p {
+    margin: 0;
+}
+header h1, .pageSections li a:hover {
+    color: #ffa801;
+}
+header i {
+    margin-left: 3px;
+    color: white;
+}
+ul.pageSections, .bannerSection h1, .bannerSection h2, .service i{
+    color: white;
+}
+.bannerSection h1{
+    font-weight: bolder;
+}
+
+.bannerSection h2, .servicesSectionHeader p{
+    font-style: italic;
+}
+
+.servicesSectionHeader p, .service p{
+    color: #485460;
+}
+
+.headerTopRow a{
+    color: #ffa801;
+    text-decoration: none;
+}

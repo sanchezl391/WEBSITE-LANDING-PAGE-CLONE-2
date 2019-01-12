@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="./fonts.css">
+    <link rel="stylesheet" href="./commonStyles.css">
+    <link href="https://fonts.googleapis.com/css?family=Charm|Crimson+Text|Oxygen" rel="stylesheet">
+    <style>
+      body{
+          margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <style>
+      @keyframes menuDropdownSlideDown {
+          from {
+              height: calc(65px - 30px);
+          }
+          to {
+              height: 300px;
+          }
+      }
+      @keyframes menuDropdownSlideUp {
+          from {
+              height: 300px;
+          }
+          to {
+              height: calc(65px - 30px);
+          }
+      }
+      header{
+          background-color: #2f3640;
+          display: flex;
+          flex-direction: column;
+          padding: 15px 90px;
+          position: absolute;
+          width: calc(100% - 180px);
+      }
+      header .pageSections{
+          display: none;
+      }
+      .headerTopRow {
+          display: flex;
+          justify-content: space-between;
+      }
+      header button{
+          height: 35px;
+      }
+      ul.pageSections {
+          list-style: none;
+          padding-left: 0;
+          justify-content: space-between;
+          height: 100%;
+      }
+      ul.pageSection li {
+          margin-bottom: 10px;
+          padding: 0;
+      }
+      .pageSections a{
+          color:white;
+          text-decoration: none;
+      }
+      .pageSections li:hover {
+          cursor: pointer;
+      }
+    </style>
+    <script>
+      let isMenuBtnClicked = false;
+      
+      function handleMenuBtnClicked(e) {
+          isMenuBtnClicked = !isMenuBtnClicked;
+          let headerStyle ='';
+          let pageSectionsStyle ='';
+      
+          if(isMenuBtnClicked){
+              headerStyle = 'animation-fill-mode: forwards; animation-duration: .5s; animation-name: menuDropdownSlideDown;';
+              pageSectionsStyle = 'display: flex; flex-direction: column';
+          } 
+          else {
+              headerStyle = 'animation-fill-mode: forwards; animation-duration: .5s; animation-name: menuDropdownSlideUp;';
+              pageSectionsStyle = 'display: none';
+          }
+      
+          let headerEl = document.getElementsByTagName('header')[0];
+          let pageSectionsEl = document.getElementsByClassName('pageSections')[0];  
+      
+          headerEl.style = headerStyle;
+          pageSectionsEl.style = pageSectionsStyle;
+      }
+    </script>
+    <header id="header">
+      <div class="headerTopRow"><a class="sm-txt cursive" href="#header">Modern Landing Page</a>
+        <button class="btn" onclick="handleMenuBtnClicked(this)">MENU<i class="fas fa-bars"></i></button>
+      </div>
+      <ul class="pageSections sans-serif">
+        <li> <a href="#services">SERVICES</a></li>
+        <li> <a href="#portfolio">PORTFOLIO</a></li>
+        <li><a href="#services">ABOUT</a></li>
+        <li> <a href="#team">TEAM</a></li>
+        <li> <a href="#contact">CONTACT</a></li>
+      </ul>
+    </header>
+    <style>
+      .bannerSection {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background-image: 
+              linear-gradient(
+                  rgba(0, 0, 0, 0.5), 
+                  rgba(0, 0, 0, 0.5)
+              ),
+              url('../assets/workplace.jpg');
+          height: 770px;
+          background-size: cover;
+      }
+      .bannerSection button {
+          padding: 20px;
+      }
+      .bannerSection h2, .bannerSection h1, .bannerSection button {
+          margin: 15px 0;
+      }
+    </style>
+    <section class="bannerSection">
+      <h2 class="md-txt serif">Welcome to our workplace!</h2>
+      <h1 class="l-txt sans-serif">WE WOULD LIKE TO MEET YOU</h1>
+      <button class="btn sm-txt">TELL ME MORE</button>
+    </section>
+    <style>
+      .servicesSection{
+          display: flex;
+          flex-direction: column;
+          margin: 100px 0;
+      }
+      .servicesSectionHeader{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 50px;
+      }
+      .servicesSection .services{
+          display: flex;
+          justify-content: center;
+      }
+      .service{
+          display: flex; 
+          flex-direction: column;
+          align-items: center;
+          margin: 0 15px;
+          flex-basis: 22%;
+      }
+      .service i {
+          background-color: #ffa801;
+          padding: 20px;
+          border-radius: calc(30px + 40px);
+      }
+      .service h2, .service i, .service p{
+          margin: 10px 0;
+      }
+      
+    </style>
+    <section class="servicesSection">
+      <div class="servicesSectionHeader">
+        <h2 class="md-txt sans-serif">SERVICES</h2>
+        <p class="sm-txt serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="services">
+            <div class="service"><i class="fas fa-shopping-cart l-txt"> </i>
+              <h2 class="sm-txt sans-serif">Higer Sales</h2>
+              <p class="sm-txt serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut quam blandit, mattis ipsum sed.</p>
+            </div>
+            <div class="service"><i class="fas fa-laptop l-txt"> </i>
+              <h2 class="sm-txt sans-serif">Responsive Design</h2>
+              <p class="sm-txt serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id nulla nunc. Phasellus in enim.</p>
+            </div>
+            <div class="service"><i class="fas fa-lock l-txt"> </i>
+              <h2 class="sm-txt sans-serif">Web Security</h2>
+              <p class="sm-txt serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam vitae lacus nec volutpat. Nam.</p>
+            </div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+mixin service(data)
+    .service
+        i(class=data.icon + ' l-txt') 
+        h2(class='sm-txt sans-serif')= data.title
+        p(class='sm-txt serif')= data.content
+style.
+    .servicesSection{
+        display: flex;
+        flex-direction: column;
+        margin: 100px 0;
+    }
+    .servicesSectionHeader{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+    .servicesSection .services{
+        display: flex;
+        justify-content: center;
+    }
+    .service{
+        display: flex; 
+        flex-direction: column;
+        align-items: center;
+        margin: 0 15px;
+        flex-basis: 22%;
+    }
+    .service i {
+        background-color: #ffa801;
+        padding: 20px;
+        border-radius: calc(30px + 40px);
+    }
+    .service h2, .service i, .service p{
+        margin: 10px 0;
+    }
+
+section.servicesSection
+    .servicesSectionHeader
+            h2(class='md-txt sans-serif') SERVICES
+            p(class='sm-txt serif') Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    - 
+        const service1 = {icon: 'fas fa-shopping-cart', title: 'Higer Sales', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut quam blandit, mattis ipsum sed.'};
+        const service2 = {icon: 'fas fa-laptop', title: 'Responsive Design', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id nulla nunc. Phasellus in enim.'};
+        const service3 = {icon: 'fas fa-lock', title: 'Web Security', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam vitae lacus nec volutpat. Nam.'};
+    .services
+        + service(service1)
+        + service(service2)
+        + service(service3)
