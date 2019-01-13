@@ -1,0 +1,225 @@
+script. 
+    const projects = {
+        Illustration: {
+            date: 'Jan 2018',
+            client: 'Bon Jovi'
+        },
+        'Graphic Design': {
+            date: 'June 2017',
+            client: 'Aerosmith'
+        }, 
+        Identity: {
+            date: 'May 2018',
+            client: 'George L.'
+        },
+        Branding: {
+            date: 'Dec 2017',
+            client: 'Samantha'
+        },
+        'Website Design': {
+            date: 'June 2017',
+            client: 'Susan'
+        },
+        Photography: {
+            date: 'Nov 2016',
+            client: 'Lui'
+        }
+    };
+
+    let dialogIsOpen = false;
+    //- populates dom nodes with category data
+    function dialogToggle(e){
+        dialogIsOpen = !dialogIsOpen;
+
+        if(dialogIsOpen){
+            let title = e.nextElementSibling.innerHTML;
+            let paragraph = 'Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus finibus iaculis turpis. Mauris quis elit quis justo lobortis elementum. Donec mi justo, semper et urna non, posuere rutrum enim. Maecenas consectetur, tellus a scelerisque faucibus, urna elit gravida odio, eget facilisis enim orci eu massa. Donec ac magna sed sapien aliquam varius a lacinia lorem.';
+            let category = e.nextElementSibling.nextElementSibling.innerHTML;
+
+            let dialogEl = document.getElementsByClassName('projectDialogContainer')[0];
+            dialogEl.style = 'display: block;';
+            let projectDialogEl = dialogEl.childNodes[1];
+            let dialogHeaderEl = projectDialogEl.childNodes[3];
+            dialogHeaderEl.childNodes[1].innerHTML = title;
+
+            //- set category image
+            let imgUrl = e.previousElementSibling.getAttribute('src');
+            let dialogBodyEl = dialogHeaderEl.nextElementSibling;
+            let imgEl = dialogBodyEl.childNodes[0];
+            imgEl.setAttribute('src', imgUrl);
+
+            //- set category body text
+            let pEl = imgEl.nextElementSibling;
+            pEl.innerHTML = paragraph;
+
+            //- Set category Details
+            let dialogFooterEl = dialogBodyEl.nextElementSibling;
+            let projectDetailsEl = dialogFooterEl.childNodes[1];
+            
+            let dateEl = projectDetailsEl.childNodes[1];
+            let clientEl = dateEl.nextElementSibling;
+            let categoryEl = clientEl.nextElementSibling;
+
+            dateEl.innerHTML = 'Date: ' + projects[category].date;
+            clientEl.innerHTML = 'Client: ' + projects[category].client;
+            categoryEl.innerHTML = 'Category: ' + category;
+        } else{
+            let dialogEl = document.getElementsByClassName('projectDialogContainer')[0];
+            dialogEl.style = 'display: none;';
+        }
+
+
+    }
+
+mixin portfolioCategory(data)
+    .portfolioCategory
+        img(src=data.src, alt= data.alt)
+        i(class='l-txt fas fa-plus' onclick='dialogToggle(this)')
+        h2(class='sm-txt sans-serif')= data.title
+        p(class='sm-txt serif')= data.category
+
+style.
+    .portfolioSection{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 200px;
+    }
+    .portfolioSectionHeader{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+    .portfolioCategory {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 32%;
+        align-items: center;
+        position: relative;
+    }
+    .portfolioCategory img{
+        height: 150px;
+        width: 150px;
+        object-fit: cover;
+        margin: 20px 10px;
+    }
+    .portfolioCategory i {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffa801;
+        height: 150px;
+        width: 150px;
+        position: absolute;
+        top: 20px;
+        opacity: 0;
+    }
+    @keyframes portfolioSectionHover {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: .8;
+        }
+    }
+    .portfolioCategory i:hover{
+        cursor: pointer;
+        animation-name: portfolioSectionHover;
+        animation-fill-mode: forwards; 
+        animation-duration: .5s; 
+    }
+    .projectDialogContainer {
+        top: 0;
+        left: 0;
+        position: fixed;
+        height: 100%;
+        width: 100vw;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        z-index: 2;
+        box-sizing: border-box;
+        display: none;
+        background-color:   rgba(0, 0, 0, 0.5);
+    }
+    .projectDialog{
+        padding: 40px;
+        background-color: white;
+        border-radius: 5px;
+        max-width: 100%;
+        margin: 20px;
+        height: auto;
+        display: flex; 
+        align-items: center;
+        flex-direction: column;
+    }
+    .projectDialog  > i{
+        align-self: flex-end;
+    }
+    .projectDialog  > i:hover {
+        cursor: pointer;
+    }
+    .projectDialog .dialogHeader {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .projectDialog .dialogHeader h2{
+        margin-bottom: 20px;
+    }
+    .projectDialog .dialogBody {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    .projectDialog .dialogBody img{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .projectDialog .projectDetails {
+        margin-bottom: 30px;
+    }
+    .portfolioCategoriesContainer {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+section.portfolioSection
+    .portfolioSectionHeader
+        h2(class='md-txt sans-serif') PORTFOLIO
+        p(class='sm-txt serif') Lorem ipsum dolor sit amet, consectetur.
+    .projectDialogContainer
+        .projectDialog 
+            i(class= 'l-txt fas fa-times' onclick='dialogToggle(this)') 
+            .dialogHeader
+                h2(class='sans-serif md-txt title')
+                p(class='sm-txt serif') Lorem ipsum dolor sit amet, consectetur 
+            .dialogBody
+                img(src='' alt='')
+                p(class='sans-serif')
+            .projectDialogFooter
+                .projectDetails
+                    p(class='xs-txt sans-serif') Date: 
+                    p(class='xs-txt sans-serif') Client:
+                    p(class='xs-txt sans-serif') Category:
+                button(class='btn')
+                    i(class=' sm-txt fas fa-times') 
+                        span(class='sans-serif' onclick='dialogToggle(this)') Close Project
+            
+    -
+        const category1 = {src:'../assets/clothing.jpg', alt:'clothing on hangers', title:'Threads', category:'Illustration'};      
+        const category2 = {src:'../assets/adventure.jpg', alt:'man on the edge of a cliff', title:'Explore', category:'Graphic Design'};   
+        const category3 = {src:'../assets/finish.jpg', alt:'man on the edge of a cliff', title:'Finish', category:'Identity'}; 
+        const category4 = {src:'../assets/branding.jpg', alt:'man on the edge of a cliff', title:'Lines', category:'Branding'}; 
+        const category5 = {src:'../assets/design.jpg', alt:'man on the edge of a cliff', title:'Southwest', category:'Website Design'}; 
+        const category6 = {src:'../assets/photography.jpg', alt:'man on the edge of a cliff', title:'Window', category:'Photography'}; 
+
+    .portfolioCategoriesContainer
+        + portfolioCategory(category1)
+        + portfolioCategory(category2)
+        + portfolioCategory(category3)
+        + portfolioCategory(category4)
+        + portfolioCategory(category5)
+        + portfolioCategory(category6)

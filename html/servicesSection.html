@@ -1,0 +1,54 @@
+
+<style>
+  .servicesSection{
+      display: flex;
+      flex-direction: column;
+      margin: 100px 0;
+  }
+  .servicesSectionHeader{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 50px;
+  }
+  .servicesSection .services{
+      display: flex;
+      justify-content: center;
+  }
+  .service{
+      display: flex; 
+      flex-direction: column;
+      align-items: center;
+      margin: 0 15px;
+      flex-basis: 22%;
+  }
+  .service i {
+      background-color: #ffa801;
+      padding: 20px;
+      border-radius: calc(30px + 40px);
+  }
+  .service h2, .service i, .service p{
+      margin: 10px 0;
+  }
+  
+</style>
+<section class="servicesSection">
+  <div class="servicesSectionHeader">
+    <h2 class="md-txt sans-serif">SERVICES</h2>
+    <p class="sm-txt serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  </div>
+  <div class="services">
+    <div class="service"><i class="fas fa-shopping-cart l-txt"> </i>
+      <h2 class="sm-txt sans-serif">Higer Sales</h2>
+      <p class="sm-txt serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut quam blandit, mattis ipsum sed.</p>
+    </div>
+    <div class="service"><i class="fas fa-laptop l-txt"> </i>
+      <h2 class="sm-txt sans-serif">Responsive Design</h2>
+      <p class="sm-txt serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id nulla nunc. Phasellus in enim.</p>
+    </div>
+    <div class="service"><i class="fas fa-lock l-txt"> </i>
+      <h2 class="sm-txt sans-serif">Web Security</h2>
+      <p class="sm-txt serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam vitae lacus nec volutpat. Nam.</p>
+    </div>
+  </div>
+</section>

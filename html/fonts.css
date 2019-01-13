@@ -35,18 +35,33 @@ header i {
     margin-left: 3px;
     color: white;
 }
-ul.pageSections, .bannerSection h1, .bannerSection h2, .service i{
+ul.pageSections, 
+.bannerSection h1, 
+.bannerSection h2, 
+.service i,
+.portfolioCategory i{
     color: white;
 }
 .bannerSection h1{
     font-weight: bolder;
 }
 
-.bannerSection h2, .servicesSectionHeader p{
+.bannerSection h2, 
+.servicesSectionHeader p, 
+.portfolioSectionHeader p,
+.portfolioCategory p,
+.projectDialog .dialogHeader p{
     font-style: italic;
 }
 
-.servicesSectionHeader p, .service p{
+.servicesSectionHeader p, 
+.service p, 
+.portfolioSectionHeader p,
+.portfolioCategory p,
+.projectDialog .dialogHeader p,
+.projectDialog .dialogBody p,
+.projectDialog .projectDialogFooter p
+{
     color: #485460;
 }
 
@@ -54,3 +69,4 @@ ul.pageSections, .bannerSection h1, .bannerSection h2, .service i{
     color: #ffa801;
     text-decoration: none;
 }
+

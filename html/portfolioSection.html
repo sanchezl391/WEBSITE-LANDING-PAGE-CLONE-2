@@ -1,0 +1,235 @@
+
+<script>
+  const projects = {
+      Illustration: {
+          date: 'Jan 2018',
+          client: 'Bon Jovi'
+      },
+      'Graphic Design': {
+          date: 'June 2017',
+          client: 'Aerosmith'
+      }, 
+      Identity: {
+          date: 'May 2018',
+          client: 'George L.'
+      },
+      Branding: {
+          date: 'Dec 2017',
+          client: 'Samantha'
+      },
+      'Website Design': {
+          date: 'June 2017',
+          client: 'Susan'
+      },
+      Photography: {
+          date: 'Nov 2016',
+          client: 'Lui'
+      }
+  };
+  
+  let dialogIsOpen = false;
+  //- populates dom nodes with category data
+  function dialogToggle(e){
+      dialogIsOpen = !dialogIsOpen;
+  
+      if(dialogIsOpen){
+          let title = e.nextElementSibling.innerHTML;
+          let paragraph = 'Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus finibus iaculis turpis. Mauris quis elit quis justo lobortis elementum. Donec mi justo, semper et urna non, posuere rutrum enim. Maecenas consectetur, tellus a scelerisque faucibus, urna elit gravida odio, eget facilisis enim orci eu massa. Donec ac magna sed sapien aliquam varius a lacinia lorem.';
+          let category = e.nextElementSibling.nextElementSibling.innerHTML;
+  
+          let dialogEl = document.getElementsByClassName('projectDialogContainer')[0];
+          dialogEl.style = 'display: block;';
+          let projectDialogEl = dialogEl.childNodes[1];
+          let dialogHeaderEl = projectDialogEl.childNodes[3];
+          dialogHeaderEl.childNodes[1].innerHTML = title;
+  
+          //- set category image
+          let imgUrl = e.previousElementSibling.getAttribute('src');
+          let dialogBodyEl = dialogHeaderEl.nextElementSibling;
+          let imgEl = dialogBodyEl.childNodes[0];
+          imgEl.setAttribute('src', imgUrl);
+  
+          //- set category body text
+          let pEl = imgEl.nextElementSibling;
+          pEl.innerHTML = paragraph;
+  
+          //- Set category Details
+          let dialogFooterEl = dialogBodyEl.nextElementSibling;
+          let projectDetailsEl = dialogFooterEl.childNodes[1];
+          
+          let dateEl = projectDetailsEl.childNodes[1];
+          let clientEl = dateEl.nextElementSibling;
+          let categoryEl = clientEl.nextElementSibling;
+  
+          dateEl.innerHTML = 'Date: ' + projects[category].date;
+          clientEl.innerHTML = 'Client: ' + projects[category].client;
+          categoryEl.innerHTML = 'Category: ' + category;
+      } else{
+          let dialogEl = document.getElementsByClassName('projectDialogContainer')[0];
+          dialogEl.style = 'display: none;';
+      }
+  
+  
+  }
+  
+</script>
+<style>
+  .portfolioSection{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 200px;
+  }
+  .portfolioSectionHeader{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 50px;
+  }
+  .portfolioCategory {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 32%;
+      align-items: center;
+      position: relative;
+  }
+  .portfolioCategory img{
+      height: 150px;
+      width: 150px;
+      object-fit: cover;
+      margin: 20px 10px;
+  }
+  .portfolioCategory i {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #ffa801;
+      height: 150px;
+      width: 150px;
+      position: absolute;
+      top: 20px;
+      opacity: 0;
+  }
+  @keyframes portfolioSectionHover {
+      from {
+          opacity: 0;
+      }
+      to {
+          opacity: .8;
+      }
+  }
+  .portfolioCategory i:hover{
+      cursor: pointer;
+      animation-name: portfolioSectionHover;
+      animation-fill-mode: forwards; 
+      animation-duration: .5s; 
+  }
+  .projectDialogContainer {
+      top: 0;
+      left: 0;
+      position: fixed;
+      height: 100%;
+      width: 100vw;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      z-index: 2;
+      box-sizing: border-box;
+      display: none;
+      background-color:   rgba(0, 0, 0, 0.5);
+  }
+  .projectDialog{
+      padding: 40px;
+      background-color: white;
+      border-radius: 5px;
+      max-width: 100%;
+      margin: 20px;
+      height: auto;
+      display: flex; 
+      align-items: center;
+      flex-direction: column;
+  }
+  .projectDialog  > i{
+      align-self: flex-end;
+  }
+  .projectDialog  > i:hover {
+      cursor: pointer;
+  }
+  .projectDialog .dialogHeader {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 10px;
+  }
+  .projectDialog .dialogHeader h2{
+      margin-bottom: 20px;
+  }
+  .projectDialog .dialogBody {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 30px;
+      text-align: center;
+  }
+  .projectDialog .dialogBody img{
+      width: 100%;
+      margin-bottom: 30px;
+  }
+  .projectDialog .projectDetails {
+      margin-bottom: 30px;
+  }
+  .portfolioCategoriesContainer {
+      display: flex;
+      flex-wrap: wrap;
+  }
+  
+</style>
+<section class="portfolioSection">
+  <div class="portfolioSectionHeader">
+    <h2 class="md-txt sans-serif">PORTFOLIO</h2>
+    <p class="sm-txt serif">Lorem ipsum dolor sit amet, consectetur.</p>
+  </div>
+  <div class="projectDialogContainer">
+    <div class="projectDialog"> <i class="l-txt fas fa-times" onclick="dialogToggle(this)"> </i>
+      <div class="dialogHeader">
+        <h2 class="sans-serif md-txt title"></h2>
+        <p class="sm-txt serif">Lorem ipsum dolor sit amet, consectetur </p>
+      </div>
+      <div class="dialogBody"><img src="" alt=""/>
+        <p class="sans-serif"></p>
+      </div>
+      <div class="projectDialogFooter">
+        <div class="projectDetails">
+          <p class="xs-txt sans-serif">Date: </p>
+          <p class="xs-txt sans-serif">Client:</p>
+          <p class="xs-txt sans-serif">Category:</p>
+        </div>
+        <button class="btn"><i class=" sm-txt fas fa-times"> <span class="sans-serif" onclick="dialogToggle(this)">Close Project</span></i></button>
+      </div>
+    </div>
+  </div>
+  <div class="portfolioCategoriesContainer">
+    <div class="portfolioCategory"><img src="../assets/clothing.jpg" alt="clothing on hangers"/><i class="l-txt fas fa-plus" onclick="dialogToggle(this)"></i>
+      <h2 class="sm-txt sans-serif">Threads</h2>
+      <p class="sm-txt serif">Illustration</p>
+    </div>
+    <div class="portfolioCategory"><img src="../assets/adventure.jpg" alt="man on the edge of a cliff"/><i class="l-txt fas fa-plus" onclick="dialogToggle(this)"></i>
+      <h2 class="sm-txt sans-serif">Explore</h2>
+      <p class="sm-txt serif">Graphic Design</p>
+    </div>
+    <div class="portfolioCategory"><img src="../assets/finish.jpg" alt="man on the edge of a cliff"/><i class="l-txt fas fa-plus" onclick="dialogToggle(this)"></i>
+      <h2 class="sm-txt sans-serif">Finish</h2>
+      <p class="sm-txt serif">Identity</p>
+    </div>
+    <div class="portfolioCategory"><img src="../assets/branding.jpg" alt="man on the edge of a cliff"/><i class="l-txt fas fa-plus" onclick="dialogToggle(this)"></i>
+      <h2 class="sm-txt sans-serif">Lines</h2>
+      <p class="sm-txt serif">Branding</p>
+    </div>
+    <div class="portfolioCategory"><img src="../assets/design.jpg" alt="man on the edge of a cliff"/><i class="l-txt fas fa-plus" onclick="dialogToggle(this)"></i>
+      <h2 class="sm-txt sans-serif">Southwest</h2>
+      <p class="sm-txt serif">Website Design</p>
+    </div>
+    <div class="portfolioCategory"><img src="../assets/photography.jpg" alt="man on the edge of a cliff"/><i class="l-txt fas fa-plus" onclick="dialogToggle(this)"></i>
+      <h2 class="sm-txt sans-serif">Window</h2>
+      <p class="sm-txt serif">Photography</p>
+    </div>
+  </div>
+</section>

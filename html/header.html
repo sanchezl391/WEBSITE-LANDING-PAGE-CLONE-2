@@ -1,0 +1,90 @@
+
+<style>
+  @keyframes menuDropdownSlideDown {
+      from {
+          height: calc(65px - 30px);
+      }
+      to {
+          height: 300px;
+      }
+  }
+  @keyframes menuDropdownSlideUp {
+      from {
+          height: 300px;
+      }
+      to {
+          height: calc(65px - 30px);
+      }
+  }
+  header{
+      background-color: #2f3640;
+      display: flex;
+      flex-direction: column;
+      padding: 15px 90px;
+      position: absolute;
+      width: calc(100% - 180px);
+  }
+  header .pageSections{
+      display: none;
+  }
+  .headerTopRow {
+      display: flex;
+      justify-content: space-between;
+  }
+  header button{
+      height: 35px;
+  }
+  ul.pageSections {
+      list-style: none;
+      padding-left: 0;
+      justify-content: space-between;
+      height: 100%;
+  }
+  ul.pageSection li {
+      margin-bottom: 10px;
+      padding: 0;
+  }
+  .pageSections a{
+      color:white;
+      text-decoration: none;
+  }
+  .pageSections li:hover {
+      cursor: pointer;
+  }
+</style>
+<script>
+  let isMenuBtnClicked = false;
+  
+  function handleMenuBtnClicked(e) {
+      isMenuBtnClicked = !isMenuBtnClicked;
+      let headerStyle ='';
+      let pageSectionsStyle ='';
+  
+      if(isMenuBtnClicked){
+          headerStyle = 'animation-fill-mode: forwards; animation-duration: .5s; animation-name: menuDropdownSlideDown;';
+          pageSectionsStyle = 'display: flex; flex-direction: column';
+      } 
+      else {
+          headerStyle = 'animation-fill-mode: forwards; animation-duration: .5s; animation-name: menuDropdownSlideUp;';
+          pageSectionsStyle = 'display: none';
+      }
+  
+      let headerEl = document.getElementsByTagName('header')[0];
+      let pageSectionsEl = document.getElementsByClassName('pageSections')[0];  
+  
+      headerEl.style = headerStyle;
+      pageSectionsEl.style = pageSectionsStyle;
+  }
+</script>
+<header id="header">
+  <div class="headerTopRow"><a class="sm-txt cursive" href="#header">Modern Landing Page</a>
+    <button class="btn" onclick="handleMenuBtnClicked(this)">MENU<i class="fas fa-bars"></i></button>
+  </div>
+  <ul class="pageSections sans-serif">
+    <li> <a href="#services">SERVICES</a></li>
+    <li> <a href="#portfolio">PORTFOLIO</a></li>
+    <li><a href="#services">ABOUT</a></li>
+    <li> <a href="#team">TEAM</a></li>
+    <li> <a href="#contact">CONTACT</a></li>
+  </ul>
+</header>
