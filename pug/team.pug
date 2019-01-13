@@ -1,0 +1,22 @@
+mixin employee(data)
+    .employee
+        img(src=data.src, alt=data.alt)
+        h2(class='md-txt sans-serif')= data.title
+        .socialMediaBtns
+            i(class='fab fa-twitter')
+            i(class='fab fa-facebook-f')
+            i(class='fab fa-linkedin-in')
+style.
+    .teamSection{
+        margin-top: 150px;
+    }
+
+section.teamSection
+    .teamSectionHeader
+        h1(class='md-txt sans-serif') OUR AMAZING TEAM
+        p(class='sm-txt serif') Lorem ipsum dolor sit amet consectetur.
+    -
+        const employee1 = {};
+    .team
+        + employee(employee1)
+    p(class='serif sm-txt') Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.

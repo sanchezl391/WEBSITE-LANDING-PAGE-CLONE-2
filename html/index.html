@@ -132,7 +132,8 @@
       .servicesSection{
           display: flex;
           flex-direction: column;
-          margin: 100px 0;
+          padding: 100px 0;
+          background-color: #f1f2f6;
       }
       .servicesSectionHeader{
           display: flex;
@@ -414,6 +415,164 @@
               <p class="sm-txt serif">Photography</p>
             </div>
       </div>
+    </section>
+    <style>
+      .aboutSection{
+          background-color: #f1f2f6;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 100px 0;
+      }
+      .aboutSection .aboutSectionHeader{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+      }
+      .timeline {
+          display: flex;
+          align-items: center;
+          margin-bottom: 100px;
+      }
+      .timelineContainer {
+          margin-top: 60px;   
+          position: relative; 
+          box-sizing: border-box;
+      }
+      .timelineContainer:before{
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          width: 2px; 
+          height: auto;
+          background-color: #ced6e0; 
+          content: '';
+          left: 50%;
+          margin-left: -4px;
+          z-index: 0;
+      }
+      .timelineContainer img{
+          width: 110px;
+          height: 110px;
+          border-radius: 50%;
+          border: 4px solid #ced6e0; 
+          z-index: 1;
+      }
+      .timelineContainer .timelineInfo {
+          margin-left: 50px;
+      }
+      .timelineInfo .txtContainer {
+          display: flex;  
+          flex-direction: column;
+          align-items: flex-end;
+          margin-right: 20px;
+      }
+      .txtContainer p {
+          text-align: right;
+      }
+      .timePeriod {
+          box-sizing: border-box;
+          display: flex;
+          width: calc(50% + 55px);
+          margin-bottom: 40px;
+      }
+      .timelineContainer .timePeriod:nth-child(even) {
+          flex-direction: row-reverse;
+          justify-content: flex-end;
+          margin-left: calc(50% - 59px);
+      }
+      .timelineContainer .timePeriod:nth-child(even) .txtContainer {
+          align-items: flex-start;
+      }
+      .timelineContainer .timePeriod:nth-child(even) .txtContainer p{
+          text-align: left;
+      }
+      .timelineContainer .timePeriod:last-child {
+          background-color: red;
+          margin-bottom: 30px;
+      }
+      .endOfTimeline {
+          box-sizing: border-box;
+          width: 110px;
+          height: 110px;
+          border-radius: 50%;
+          border: 4px solid #ced6e0; 
+          position: relative;
+          z-index: 2;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 5px;
+          text-align: center;
+          align-self: center;
+          margin-left: calc(50% - 59px);
+          background-color: #ffa801;
+      }
+      
+    </style>
+    <section class="aboutSection">
+      <div class="aboutSectionHeader">
+        <h1 class="sans-serif md-txt">ABOUT</h1>
+        <p class="serif sm-txt">Lorem ipsum dolor sit amet, consectetur.</p>
+      </div>
+      <div class="timelineContainer">   
+            <div class="timePeriod">
+              <div class="timelineInfo">
+                <div class="txtContainer">
+                  <h2 class="sm-txt sans-serif">2009-2011</h2>
+                  <h2 class="sm-txt sans-serif">Our Humble Beginnings</h2>
+                  <p class="sm-txt serif">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed!</p>
+                </div>
+              </div><img src="../assets/beginning.jpg" alt="Mountains">
+            </div>
+            <div class="timePeriod">
+              <div class="timelineInfo">
+                <div class="txtContainer">
+                  <h2 class="sm-txt sans-serif">March 2011</h2>
+                  <h2 class="sm-txt sans-serif">An Agency is Born</h2>
+                  <p class="sm-txt serif">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed!</p>
+                </div>
+              </div><img src="../assets/plane.jpg" alt="Airplane">
+            </div>
+            <div class="timePeriod">
+              <div class="timelineInfo">
+                <div class="txtContainer">
+                  <h2 class="sm-txt sans-serif">December 2012</h2>
+                  <h2 class="sm-txt sans-serif">Transition to Full Service</h2>
+                  <p class="sm-txt serif">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed!</p>
+                </div>
+              </div><img src="../assets/laptop.jpg" alt="Laptop">
+            </div>
+            <div class="timePeriod">
+              <div class="timelineInfo">
+                <div class="txtContainer">
+                  <h2 class="sm-txt sans-serif">July 2014</h2>
+                  <h2 class="sm-txt sans-serif">Phase Two Expansion</h2>
+                  <p class="sm-txt serif">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed!</p>
+                </div>
+              </div><img src="../assets/mountains.jpg" alt="Mountains">
+            </div>
+        <div class="endOfTimeline sans-serif">Be Part Of Our Story!</div>
+      </div>
+    </section>
+    <style>
+      .teamSection{
+          margin-top: 150px;
+      }
+      
+    </style>
+    <section class="teamSection">
+      <div class="teamSectionHeader">
+        <h1 class="md-txt sans-serif">OUR AMAZING TEAM</h1>
+        <p class="sm-txt serif">Lorem ipsum dolor sit amet consectetur.</p>
+      </div>
+      <div class="team">
+            <div class="employee"><img>
+              <h2 class="md-txt sans-serif"></h2>
+              <div class="socialMediaBtns"><i class="fab fa-twitter"></i><i class="fab fa-facebook-f"></i><i class="fab fa-linkedin-in"></i></div>
+            </div>
+      </div>
+      <p class="serif sm-txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
     </section>
   </body>
 </html>
