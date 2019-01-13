@@ -40,7 +40,8 @@ ul.pageSections,
 .bannerSection h2, 
 .service i,
 .portfolioCategory i,
-.endOfTimeline{
+.endOfTimeline,
+.employee .socialMediaBtns i {
     color: white;
 }
 .bannerSection h1{
@@ -53,7 +54,8 @@ ul.pageSections,
 .portfolioCategory p,
 .projectDialog .dialogHeader p,
 .aboutSection .aboutSectionHeader p,
-.timelineContainer .txtContainer p{
+.timelineContainer .txtContainer p,
+.teamSectionHeader p{
     font-style: italic;
 }
 
@@ -65,7 +67,10 @@ ul.pageSections,
 .projectDialog .dialogBody p,
 .projectDialog .projectDialogFooter p,
 .aboutSection .aboutSectionHeader p,
-.timelineContainer .txtContainer p
+.timelineContainer .txtContainer p,
+.teamSectionHeader p,
+.employee p,
+.teamSectionFooter
 {
     color: #485460;
 }

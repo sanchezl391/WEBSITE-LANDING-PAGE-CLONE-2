@@ -1,22 +1,89 @@
 mixin employee(data)
     .employee
         img(src=data.src, alt=data.alt)
-        h2(class='md-txt sans-serif')= data.title
+        h2(class='sm-txt sans-serif')= data.name
+        p(class='sm-txt serif')= data.title
         .socialMediaBtns
-            i(class='fab fa-twitter')
-            i(class='fab fa-facebook-f')
-            i(class='fab fa-linkedin-in')
+            .iconContainer
+                i(class='sm-txt fab fa-twitter')
+            .iconContainer
+                i(class='sm-txt fab fa-facebook-f')
+            .iconContainer
+                i(class='sm-txt fab fa-linkedin-in')
 style.
+
     .teamSection{
         margin-top: 150px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        align-content: center;
+        padding-bottom: 150px;
     }
-
+    .teamSectionHeader {
+        display: flex;
+        flex-direction : column;
+        margin-bottom: 70px;
+    }
+    .team {
+        display: flex;
+        margin-bottom: 50px;
+    }
+    .employee {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        margin: 0 10px;
+    }
+    .employee img {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        margin-bottom: 40px;
+    }
+    .employee .socialMediaBtns {
+        margin-top: 15px;
+        display: flex;
+    }
+    .employee .iconContainer {
+        padding: 10px;
+        background-color: #2f3542;
+        border-radius: 50%;
+        margin: 0 5px;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .employee .iconContainer:hover{
+        animation-name: socialMediaBtnHover;
+        animation-duration: .5s;
+        animation-fill-mode: forwards;
+        cursor: pointer;
+    }
+    @keyframes socialMediaBtnHover {
+        from {
+            background-color: #2f3542;
+        }
+        to {
+            background-color: #ffa801;
+        }
+    }
+    .teamSectionFooter {
+        text-align: center;
+    } 
 section.teamSection
     .teamSectionHeader
         h1(class='md-txt sans-serif') OUR AMAZING TEAM
         p(class='sm-txt serif') Lorem ipsum dolor sit amet consectetur.
     -
-        const employee1 = {};
+        const employee1 = {name: 'Larry Parker', src:'../assets/lead-marketer.jpg', alt:'lead marketer doing business', title: 'Lead Marketer'};
+        const employee2 = {name: 'Diana Peterson', src:'../assets/lead-developer.jpg', alt:'lead developer showing laptop', title: 'Lead Developer'};
+        const employee3 = {name: 'Michael Richardson', src:'../assets/lead-designer.jpg', alt:'lead designer smiling', title: 'Lead Designer'};
     .team
         + employee(employee1)
-    p(class='serif sm-txt') Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.
+        + employee(employee2)
+        + employee(employee3)
+    p(class='teamSectionFooter serif sm-txt') Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.
