@@ -1,0 +1,101 @@
+
+<style>
+  .teamSection{
+      margin-top: 150px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      align-content: center;
+      padding-bottom: 150px;
+  }
+  .teamSectionHeader {
+      display: flex;
+      flex-direction : column;
+      margin-bottom: 70px;
+  }
+  .team {
+      display: flex;
+      margin-bottom: 50px;
+  }
+  .employee {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-content: center;
+      margin: 0 10px;
+  }
+  .employee img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      margin-bottom: 40px;
+  }
+  .employee .socialMediaBtns {
+      margin-top: 15px;
+      display: flex;
+  }
+  .employee .iconContainer {
+      padding: 10px;
+      background-color: #2f3542;
+      border-radius: 50%;
+      margin: 0 5px;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  .employee .iconContainer:hover{
+      animation-name: socialMediaBtnHover;
+      animation-duration: .5s;
+      animation-fill-mode: forwards;
+      cursor: pointer;
+  }
+  @keyframes socialMediaBtnHover {
+      from {
+          background-color: #2f3542;
+      }
+      to {
+          background-color: #ffa801;
+      }
+  }
+  .teamSectionFooter {
+      text-align: center;
+  } 
+</style>
+<section class="teamSection">
+  <div class="teamSectionHeader">
+    <h1 class="md-txt sans-serif">OUR AMAZING TEAM</h1>
+    <p class="sm-txt serif">Lorem ipsum dolor sit amet consectetur.</p>
+  </div>
+  <div class="team">
+    <div class="employee"><img src="../assets/lead-marketer.jpg" alt="lead marketer doing business"/>
+      <h2 class="sm-txt sans-serif">Larry Parker</h2>
+      <p class="sm-txt serif">Lead Marketer</p>
+      <div class="socialMediaBtns">
+        <div class="iconContainer"><i class="sm-txt fab fa-twitter"></i></div>
+        <div class="iconContainer"><i class="sm-txt fab fa-facebook-f"></i></div>
+        <div class="iconContainer"><i class="sm-txt fab fa-linkedin-in"></i></div>
+      </div>
+    </div>
+    <div class="employee"><img src="../assets/lead-developer.jpg" alt="lead developer showing laptop"/>
+      <h2 class="sm-txt sans-serif">Diana Peterson</h2>
+      <p class="sm-txt serif">Lead Developer</p>
+      <div class="socialMediaBtns">
+        <div class="iconContainer"><i class="sm-txt fab fa-twitter"></i></div>
+        <div class="iconContainer"><i class="sm-txt fab fa-facebook-f"></i></div>
+        <div class="iconContainer"><i class="sm-txt fab fa-linkedin-in"></i></div>
+      </div>
+    </div>
+    <div class="employee"><img src="../assets/lead-designer.jpg" alt="lead designer smiling"/>
+      <h2 class="sm-txt sans-serif">Michael Richardson</h2>
+      <p class="sm-txt serif">Lead Designer</p>
+      <div class="socialMediaBtns">
+        <div class="iconContainer"><i class="sm-txt fab fa-twitter"></i></div>
+        <div class="iconContainer"><i class="sm-txt fab fa-facebook-f"></i></div>
+        <div class="iconContainer"><i class="sm-txt fab fa-linkedin-in"></i></div>
+      </div>
+    </div>
+  </div>
+  <p class="teamSectionFooter serif sm-txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+</section>

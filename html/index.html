@@ -655,5 +655,74 @@
       </div>
       <p class="teamSectionFooter serif sm-txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
     </section>
+    <style>
+      .contactUsSection {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background-image: 
+              linear-gradient(
+                  rgba(0, 0, 0, 0.5), 
+                  rgba(0, 0, 0, 0.4)
+              ),
+              url('../assets/world.jpg');
+          background-size: cover;
+          padding-bottom: 100px;
+      }
+      .contactUsSection .contactUsSectionHeader {
+          margin-top: 75px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 75px;
+      }
+      .contactUsSection .inputsContainer {
+          height: 200px;
+          display: flex;
+          margin-bottom: 20px;
+      }
+      .contactUsSection .inputsContainer .inputContainer{
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          margin-right: 20px;
+      }
+      .contactUsSection .inputContainer input, .contactUsSection textarea {
+          padding: 15px;
+          border-radius: 5px;
+          border: none;
+      }
+      .contactUsSection textarea {
+          width: 400px;
+      }
+      
+      .contactUsSection form {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+      }
+      .contactUsSection form button {
+          padding 30px;
+      }
+      
+    </style>
+    <section class="contactUsSection">
+      <div class="contactUsSectionHeader">
+        <h1 class="md-txt sans-serif">CONTACT US</h1>
+        <p class="sm-txt serif">Lorem ipsum dolor sit amet consectetur.</p>
+      </div>
+      <form>
+        <div class="inputsContainer">
+          <div class="inputContainer">
+            <input class="sans-serif sm-txt" type="text" placeholder="Your Name">
+            <input class="sans-serif sm-txt" type="email" placeholder="Your Email">
+            <input class="sans-serif sm-txt" type="phone" placeholder="Your Phone">
+          </div>
+          <textarea class="sans-serif sm-txt" placeholder="Your Message"></textarea>
+        </div>
+        <button class="sm-txt sans-serif btn">SEND MESSSAGE</button>
+      </form>
+    </section>
   </body>
 </html>

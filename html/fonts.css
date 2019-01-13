@@ -41,7 +41,9 @@ ul.pageSections,
 .service i,
 .portfolioCategory i,
 .endOfTimeline,
-.employee .socialMediaBtns i {
+.employee .socialMediaBtns i,
+.contactUsSection .contactUsSectionHeader h1,
+.contactUsSection .contactUsSectionHeader p{
     color: white;
 }
 .bannerSection h1{
@@ -55,7 +57,8 @@ ul.pageSections,
 .projectDialog .dialogHeader p,
 .aboutSection .aboutSectionHeader p,
 .timelineContainer .txtContainer p,
-.teamSectionHeader p{
+.teamSectionHeader p,
+.contactUsSection .contactUsSectionHeader p{
     font-style: italic;
 }
 
