@@ -45,7 +45,8 @@ ul.pageSections,
 .employee .socialMediaBtns i,
 .contactUsSection .contactUsSectionHeader h1,
 .contactUsSection .contactUsSectionHeader p,
-.footer .socialIconsContainer i {
+.footer .socialIconsContainer i ,
+.bannerSection a{
     color: white;
 }
 .bannerSection h1{

@@ -96,7 +96,7 @@
       <ul class="pageSections sans-serif">
         <li> <a href="#services">SERVICES</a></li>
         <li> <a href="#portfolio">PORTFOLIO</a></li>
-        <li><a href="#services">ABOUT</a></li>
+        <li><a href="#about">ABOUT</a></li>
         <li> <a href="#team">TEAM</a></li>
         <li> <a href="#contact">CONTACT</a></li>
       </ul>
@@ -122,11 +122,14 @@
       .bannerSection h2, .bannerSection h1, .bannerSection button {
           margin: 15px 0;
       }
+      .bannerSection a{
+          text-decoration: none;
+      }
     </style>
     <section class="bannerSection">
       <h2 class="md-txt serif">Welcome to our workplace!</h2>
       <h1 class="l-txt sans-serif">WE WOULD LIKE TO MEET YOU</h1>
-      <button class="btn sm-txt">TELL ME MORE</button>
+      <button class="btn sm-txt"> <a href="#services">TELL ME MORE</a></button>
     </section>
     <style>
       .servicesSection{
@@ -162,7 +165,7 @@
       }
       
     </style>
-    <section class="servicesSection">
+    <section class="servicesSection" id="services">
       <div class="servicesSectionHeader">
         <h2 class="md-txt sans-serif">SERVICES</h2>
         <p class="sm-txt serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -365,7 +368,7 @@
       }
       
     </style>
-    <section class="portfolioSection">
+    <section class="portfolioSection" id="portfolio">
       <div class="portfolioSectionHeader">
         <h2 class="md-txt sans-serif">PORTFOLIO</h2>
         <p class="sm-txt serif">Lorem ipsum dolor sit amet, consectetur.</p>
@@ -510,7 +513,7 @@
       }
       
     </style>
-    <section class="aboutSection">
+    <section class="aboutSection" id="about">
       <div class="aboutSectionHeader">
         <h1 class="sans-serif md-txt">ABOUT</h1>
         <p class="serif sm-txt">Lorem ipsum dolor sit amet, consectetur.</p>
@@ -619,7 +622,7 @@
           text-align: center;
       } 
     </style>
-    <section class="teamSection">
+    <section class="teamSection" id="team">
       <div class="teamSectionHeader">
         <h1 class="md-txt sans-serif">OUR AMAZING TEAM</h1>
         <p class="sm-txt serif">Lorem ipsum dolor sit amet consectetur.</p>
@@ -707,7 +710,7 @@
       }
       
     </style>
-    <section class="contactUsSection">
+    <section class="contactUsSection" id="contact">
       <div class="contactUsSectionHeader">
         <h1 class="md-txt sans-serif">CONTACT US</h1>
         <p class="sm-txt serif">Lorem ipsum dolor sit amet consectetur.</p>
