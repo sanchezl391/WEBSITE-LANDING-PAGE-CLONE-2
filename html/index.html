@@ -724,5 +724,65 @@
         <button class="sm-txt sans-serif btn">SEND MESSSAGE</button>
       </form>
     </section>
+    <style>
+      .footer{
+          margin: 25px 0;
+          display: flex;
+          justify-content: space-around; 
+          align-content: center;
+      }
+      .footer .copyrightContainer {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+      }
+      .footer .socialIconsContainer {
+          display: flex;
+      }
+      .footer .socialIconsContainer .iconContainer {
+          padding: 10px;
+          background-color: #353b48;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+          margin: 0 10px;
+      }
+      .footer .socialIconsContainer .iconContainer:hover {
+          cursor: pointer;
+          background-color: #ffa801; 
+      }
+      
+      .footer .companyRulesContainer p:hover {
+          cursor: pointer; 
+      }
+      .footer .companyRulesContainer {
+          display: flex;
+      }
+      .footer .companyRulesContainer p{
+          margin: 0 8px;
+      }
+      
+      .footer .companyRulesContainer p:hover{
+          text-decoration: underline;
+      }
+    </style>
+    <section class="footer">
+      <div class="copyrightContainer">
+        <p class="sm-txt sans-serif">Copyright © Your Website </p>
+        <p class="sm-txt sans-serif">2018</p>
+      </div>
+      <div class="socialIconsContainer">
+        <div class="iconContainer"><i class="fab fa-twitter sm-txt"></i></div>
+        <div class="iconContainer"><i class="fab fa-facebook-f sm-txt"></i></div>
+        <div class="iconContainer"><i class="fab fa-linkedin-in sm-txt"></i></div>
+      </div>
+      <div class="companyRulesContainer">
+        <p class="sm-txt sans-serif">Privacy Policy</p>
+        <p class="sm-txt sans-serif">Terms of Use</p>
+      </div>
+    </section>
   </body>
 </html>

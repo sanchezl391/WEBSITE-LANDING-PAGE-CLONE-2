@@ -28,7 +28,8 @@
 h1, h2, h3, p {
     margin: 0;
 }
-header h1, .pageSections li a:hover {
+header h1, .pageSections li a:hover,
+.footer .companyRulesContainer p {
     color: #ffa801;
 }
 header i {
@@ -43,7 +44,8 @@ ul.pageSections,
 .endOfTimeline,
 .employee .socialMediaBtns i,
 .contactUsSection .contactUsSectionHeader h1,
-.contactUsSection .contactUsSectionHeader p{
+.contactUsSection .contactUsSectionHeader p,
+.footer .socialIconsContainer i {
     color: white;
 }
 .bannerSection h1{
