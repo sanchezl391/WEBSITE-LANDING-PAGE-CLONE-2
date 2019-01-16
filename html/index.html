@@ -34,8 +34,10 @@
           display: flex;
           flex-direction: column;
           padding: 15px 90px;
-          position: absolute;
+          position: fixed;
           width: calc(100% - 180px);
+          z-index: 3;
+          top: 0;
       }
       header .pageSections{
           display: none;
@@ -97,12 +99,13 @@
           setTimeout(function() {
               element.scrollTop = element.scrollTop + perTick;
               if (element.scrollTop === to) return;
-              scrollTo(element, to, duration - 3);
+              scrollTo(element, to, duration - 10);
           }, 10);
       }
       
       window.addEventListener('DOMContentLoaded', function () {
           let anchorTagEls = document.getElementsByClassName('sectionLink');
+          //- add navbar eventlisteners
           for(let i = 0;i < anchorTagEls.length;i++ ){
               anchorTagEls[i].onclick = animateScroll;
           }
@@ -113,10 +116,11 @@
           let section = e.target.getAttribute("href");
           // get top position of section Elements in relation to top of page
           var sectionEl = document.getElementById(section.slice(1));
-          let jmp = sectionEl.offsetTop;
+          let jmp = sectionEl.offsetTop - 65;
           let htmlEl = document.getElementsByTagName('html')[0];
-          setTimeout(()=> scrollTo(htmlEl, jmp, 400), 600);
-          handleMenuBtnClicked();
+          setTimeout(()=> scrollTo(htmlEl, jmp, 350), 700);
+          if(isMenuBtnClicked) // - close navigation bar when opened before animating scroll
+              handleMenuBtnClicked();
       }
     </script>
     <header id="header">
@@ -159,7 +163,7 @@
     <section class="bannerSection">
       <h2 class="md-txt serif">Welcome to our workplace!</h2>
       <h1 class="l-txt sans-serif">WE WOULD LIKE TO MEET YOU</h1>
-      <button class="btn sm-txt"> <a href="#services">TELL ME MORE</a></button>
+      <button class="btn sm-txt"> <a class="sectionLink" href="#services">TELL ME MORE</a></button>
     </section>
     <style>
       .servicesSection{
