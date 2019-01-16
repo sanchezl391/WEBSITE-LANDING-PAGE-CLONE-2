@@ -1,4 +1,3 @@
-
 //- Header CSS
 style.
     @keyframes menuDropdownSlideDown {
@@ -77,6 +76,35 @@ script.
         headerEl.style = headerStyle;
         pageSectionsEl.style = pageSectionsStyle;
     }
+
+    function scrollTo(element, to, duration){
+        if (duration <= 0) return;
+        var difference = to - element.scrollTop;
+        var perTick = difference / duration * 10;
+
+        setTimeout(function() {
+            element.scrollTop = element.scrollTop + perTick;
+            if (element.scrollTop === to) return;
+            scrollTo(element, to, duration - 10);
+        }, 10);
+    }
+
+    window.addEventListener('DOMContentLoaded', function () {
+        let anchorTagEls = document.getElementsByClassName('sectionLink');
+        for(let i = 0;i < anchorTagEls.length;i++ ){
+            anchorTagEls[i].onclick = animateScroll;
+        }
+    });
+
+    function animateScroll(e) {
+        e.preventDefault(); // prevent jumping to section, animate instead       
+        let section = e.target.getAttribute("href");
+        // get top position of section Elements in relation to top of page
+        var sectionEl = document.getElementById(section.slice(1));
+        let jmp = sectionEl.offsetTop;
+        let htmlEl = document.getElementsByTagName('html')[0];
+        setTimeout(()=> scrollTo(htmlEl, jmp, 600), 200);
+    }
 //- End of Header JS
 
 
@@ -85,17 +113,17 @@ script.
 header#header
     .headerTopRow
         a(href='#header' class='sm-txt cursive') Modern Landing Page
-        button(class='btn' onclick="handleMenuBtnClicked(this)") MENU
+        button(class='btn' onclick='handleMenuBtnClicked(this)') MENU
             i(class='fas fa-bars')
     ul(class='pageSections sans-serif')
         li 
-            a(href='#services') SERVICES
+            a(class='sectionLink' href='#services') SERVICES
         li 
-            a(href='#portfolio') PORTFOLIO
+            a(class='sectionLink' href='#portfolio') PORTFOLIO
         li
-            a(href='#about') ABOUT
+            a(class='sectionLink' href='#about') ABOUT
         li 
-            a(href='#team') TEAM
+            a(class='sectionLink' href='#team') TEAM
         li 
-            a(href='#contact') CONTACT
+            a(class='sectionLink' href='#contact') CONTACT
         
