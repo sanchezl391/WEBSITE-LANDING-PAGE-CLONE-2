@@ -79,13 +79,13 @@ script.
 
     function scrollTo(element, to, duration){
         if (duration <= 0) return;
-        var difference = to - element.scrollTop;
+        var difference = to - element.scrollTop; // how much more till we get to a section
         var perTick = difference / duration * 10;
 
         setTimeout(function() {
             element.scrollTop = element.scrollTop + perTick;
             if (element.scrollTop === to) return;
-            scrollTo(element, to, duration - 10);
+            scrollTo(element, to, duration - 3);
         }, 10);
     }
 
@@ -103,7 +103,8 @@ script.
         var sectionEl = document.getElementById(section.slice(1));
         let jmp = sectionEl.offsetTop;
         let htmlEl = document.getElementsByTagName('html')[0];
-        setTimeout(()=> scrollTo(htmlEl, jmp, 600), 200);
+        setTimeout(()=> scrollTo(htmlEl, jmp, 400), 600);
+        handleMenuBtnClicked();
     }
 //- End of Header JS
 
