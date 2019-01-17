@@ -72,8 +72,9 @@
           cursor: pointer;
       }
       //- Media Queries
-      @media only screen and (max-width: 668px) { 
-          header{
+      @media (min-width: 0px) and (max-width: 668px) {
+          header {
+              padding: 15px;
               height: 56px;
           }
       }
@@ -84,9 +85,20 @@
           }
       }
       
-      @media (min-width: 0px) and (max-width: 668px) {
+      @media (min-width: 992px) {
+          header button{
+              display: none;  
+          }    
           header {
-              padding: 15px;
+              flex-direction: row;
+              align-items: center;
+              justify-content: space-between;
+          }
+          header .pageSections {
+              display: flex;
+          }
+          .pageSections li{
+              margin-right: 15px;
           }
       }
       
@@ -460,6 +472,20 @@
               height: 300px; 
           }
       }
+      @media (min-width: 992px) {
+          .portfolioCategory img {
+              width: 25vw;
+              height: 25vw;
+          }
+      
+          .projectDialogContainer .dialogBody{
+              width:50vw;
+          }
+      
+          .projectDialogContainer .dialogBody img{
+              align-self: center;
+          }
+      }
       
     </style>
     <section class="portfolioSection" id="portfolio">
@@ -642,6 +668,11 @@
           }
       
       }
+      @media (min-width: 992px) {
+          .timelineContainer{
+              width: 70vw;
+          }
+      }
       
     </style>
     <section class="aboutSection" id="about">
@@ -758,6 +789,14 @@
               flex-direction: column;
           }
       }
+      @media (min-width: 992px) {
+          .employee{
+              margin: 0 50px;
+          }
+          .teamSectionFooter {
+              width: 60vw;
+          }
+      }
     </style>
     <section class="teamSection" id="team">
       <div class="teamSectionHeader">
@@ -868,6 +907,26 @@
           }
           .contactUsSection button {
               padding: 20px;
+          }
+      }
+      @media (min-width: 992px) {
+          .contactUsSection .inputsContainer {
+              height: auto;
+              width: 80%;
+              justify-content: space-between;
+          }
+          .contactUsSection .inputsContainer .inputContainer,
+          .contactUsSection .inputsContainer textarea{
+              width: 50%;
+          }
+          .contactUsSection .inputsContainer input{
+              margin-bottom: 15px;
+          }
+          .contactUsSection .inputsContainer input:last-child{
+              margin-bottom: 0;
+          }
+          .contactUsSection button {
+              padding: 20px 30px;
           }
       }
       

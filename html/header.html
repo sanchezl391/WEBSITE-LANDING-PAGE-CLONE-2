@@ -55,8 +55,9 @@
       cursor: pointer;
   }
   //- Media Queries
-  @media only screen and (max-width: 668px) { 
-      header{
+  @media (min-width: 0px) and (max-width: 668px) {
+      header {
+          padding: 15px;
           height: 56px;
       }
   }
@@ -67,9 +68,20 @@
       }
   }
   
-  @media (min-width: 0px) and (max-width: 668px) {
+  @media (min-width: 992px) {
+      header button{
+          display: none;  
+      }    
       header {
-          padding: 15px;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+      }
+      header .pageSections {
+          display: flex;
+      }
+      .pageSections li{
+          margin-right: 15px;
       }
   }
   
