@@ -78,7 +78,6 @@ style.
         text-align: left;
     }
     .timelineContainer .timePeriod:last-child {
-        background-color: red;
         margin-bottom: 30px;
     }
     .endOfTimeline {
@@ -98,6 +97,44 @@ style.
         margin-left: calc(50% - 59px);
         background-color: #ffa801;
     }
+    @media (min-width: 0px) and (max-width: 668px) {
+        .timelineContainer:before{
+            left: 0;
+            margin-left: calc(10px + 4px + 40px);
+        }
+        .timelineContainer .timePeriod:nth-child(even) {
+            flex-direction: row-reverse;
+            width: 100%;
+            margin-left: 0;
+        }
+        .timelineContainer .timePeriod {
+            flex-direction: row-reverse;
+            width: 100%;
+            margin-left: 0;
+        }
+        .timelineContainer .timePeriod .txtContainer p{
+            text-align: left;
+        }
+        .timelineContainer .timePeriod .txtContainer {
+            align-items: flex-start;
+        }
+
+        .timelineContainer .timelineInfo {
+            margin: 0 13px;
+        }
+        .timelineContainer img {
+            width: 80px;
+            height: 80px;
+            margin-left: 10px;
+        }
+        .endOfTimeline{
+            width: 80px;
+            height: 80px;
+            align-self: flex-start;
+            margin-left: calc(10px + 4px);
+        }
+
+    }
 
 section(class='aboutSection' id='about')
     .aboutSectionHeader
@@ -113,6 +150,6 @@ section(class='aboutSection' id='about')
         + timePeriod(timePeriod2)
         + timePeriod(timePeriod3)
         + timePeriod(timePeriod4)
-        div(class='endOfTimeline sans-serif') Be Part Of Our Story!
+        div(class='xs-txt endOfTimeline sans-serif') Be Part Of Our Story!
                
         
