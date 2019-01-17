@@ -16,6 +16,30 @@
 .xs-txt {
     font-size: 15px;
 }
+
+/* Size Media Queries */
+@media only screen and (max-width: 668px) {
+    .xxl-txt {
+        font-size: 100px;
+    }
+    .xl-txt {
+        font-size: 80px;
+    }
+    .l-txt {
+        font-size: 60px;
+    }
+    .md-txt {
+        font-size: 40px;
+    }
+    .sm-txt {
+        font-size: 1000px;
+    }
+    .xs-txt {
+        font-size: 15px;
+    }
+}
+
+
 .cursive{
     font-family: 'Charm', cursive;
 }

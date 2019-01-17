@@ -15,7 +15,7 @@
     <style>
       @keyframes menuDropdownSlideDown {
           from {
-              height: calc(65px - 30px);
+              height: 65px;
           }
           to {
               height: 300px;
@@ -26,7 +26,7 @@
               height: 300px;
           }
           to {
-              height: calc(65px - 30px);
+              height: 65px;
           }
       }
       header{
@@ -35,7 +35,8 @@
           flex-direction: column;
           padding: 15px 90px;
           position: fixed;
-          width: calc(100% - 180px);
+          width: 100%;
+          box-sizing: border-box;
           z-index: 3;
           top: 0;
       }
@@ -66,6 +67,13 @@
       .pageSections li:hover {
           cursor: pointer;
       }
+      //- Media Queries
+      @media only screen and (max-width: 668px) { //- iPhone 6/7/8
+          header{
+              height: 56px;
+          }
+      }
+      
     </style>
     <script>
       let isMenuBtnClicked = false;
