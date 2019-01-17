@@ -1,24 +1,5 @@
-.xxl-txt {
-    font-size: 100px;
-}
-.xl-txt {
-    font-size: 80px;
-}
-.l-txt {
-    font-size: 60px;
-}
-.md-txt {
-    font-size: 40px;
-}
-.sm-txt {
-    font-size: 20px;
-}
-.xs-txt {
-    font-size: 15px;
-}
-
-/* Size Media Queries */
-@media only screen and (max-width: 668px) {
+/* PC. */
+@media (min-width: 992px) {
     .xxl-txt {
         font-size: 100px;
     }
@@ -32,10 +13,51 @@
         font-size: 40px;
     }
     .sm-txt {
-        font-size: 1000px;
+        font-size: 20px;
     }
     .xs-txt {
         font-size: 15px;
+    }
+}
+
+/* Tablet. */
+@media (min-width: 669px) and (max-width: 991px) {
+    .xl-txt {
+        font-size: 120px;
+    }
+    .l-txt {
+        font-size: 80px;
+    }
+    .md-txt {
+        font-size: 50px;
+    }
+    .sm-txt {
+        font-size: 25px;
+    }
+    .xs-txt {
+        font-size: 20px;
+    }
+}
+
+/* Size Media Queries */
+@media (max-width: 668px) {
+    .xxl-txt {
+        font-size: 250px;
+    }
+    .xl-txt {
+        font-size: 200px;
+    }
+    .l-txt {
+        font-size: 150px;
+    }
+    .md-txt {
+        font-size: 80px;
+    }
+    .sm-txt {
+        font-size: 50px;
+    }
+    .xs-txt {
+        font-size: 37.5px;
     }
 }
 
