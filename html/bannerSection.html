@@ -19,6 +19,7 @@
   }
   .bannerSection h2, .bannerSection h1, .bannerSection button {
       margin: 15px 0;
+      text-align: center;
   }
   .bannerSection a{
       text-decoration: none;
@@ -27,7 +28,15 @@
   @media (min-width: 669px) and (max-width: 991px) {
       .bannerSection h1{
           padding: 0 50px;
-          text-align: center;
+      }
+  }
+  
+  @media (min-width: 0px) and (max-width: 668px) {
+      .bannerSection {
+          height: 500px;
+      }
+      .bannerSection h2, .bannerSection h1, .bannerSection button {
+          margin: 5px 0;
       }
   }
 </style>

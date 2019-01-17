@@ -39,25 +39,25 @@
     }
 }
 
-/* Size Media Queries */
-@media (max-width: 668px) {
+/* Phone*/
+@media (min-width: 0px) and (max-width: 668px) {
     .xxl-txt {
         font-size: 250px;
     }
     .xl-txt {
-        font-size: 200px;
-    }
-    .l-txt {
-        font-size: 150px;
-    }
-    .md-txt {
-        font-size: 80px;
-    }
-    .sm-txt {
         font-size: 50px;
     }
+    .l-txt {
+        font-size: 45px;
+    }
+    .md-txt {
+        font-size: 30px;
+    }
+    .sm-txt {
+        font-size: 20px;
+    }
     .xs-txt {
-        font-size: 37.5px;
+        font-size: 15px;
     }
 }
 

@@ -11,6 +11,7 @@
       flex-direction: column;
       align-items: center;
       margin-bottom: 50px;
+      text-align: center;
   }
   .servicesSection .services{
       display: flex;
@@ -31,6 +32,12 @@
   .service h2, .service i, .service p{
       margin: 10px 0;
   }
+  @media (min-width: 0px) and (max-width: 668px) {
+      .services {
+          flex-direction: column;
+      }
+  }
+  
   
 </style>
 <section class="servicesSection" id="services">

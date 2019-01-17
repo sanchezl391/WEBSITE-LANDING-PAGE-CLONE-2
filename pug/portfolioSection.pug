@@ -137,7 +137,7 @@ style.
         width: 100vw;
         overflow-x: hidden;
         overflow-y: scroll;
-        z-index: 2;
+        z-index: 4;
         box-sizing: border-box;
         display: none;
         background-color:   rgba(0, 0, 0, 0.5);
@@ -184,6 +184,19 @@ style.
     .portfolioCategoriesContainer {
         display: flex;
         flex-wrap: wrap;
+    }
+    @media (min-width: 0px) and (max-width: 668px) {
+        .portfolioCategory img{
+            width: 300px;
+            height: 300px;
+        }
+        .portfolioCategoriesContainer{
+            flex-direction: column;
+        }
+        .portfolioCategory i {
+            width: 300px;
+            height: 300px; 
+        }
     }
 
 section(class='portfolioSection' id='portfolio')

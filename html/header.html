@@ -22,7 +22,7 @@
       flex-direction: column;
       padding: 15px 90px;
       position: fixed;
-      width: 100%;
+      width: 100vw;
       box-sizing: border-box;
       z-index: 3;
       top: 0;
@@ -64,7 +64,12 @@
       #header button{
           padding: 4px;
           box-sizing: border-box;
-          height: auto;
+      }
+  }
+  
+  @media (min-width: 0px) and (max-width: 668px) {
+      header {
+          padding: 15px;
       }
   }
   

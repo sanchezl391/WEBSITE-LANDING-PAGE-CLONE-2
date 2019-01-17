@@ -4,11 +4,12 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="./fonts.css">
     <link rel="stylesheet" href="./commonStyles.css">
-    <link href="https://fonts.googleapis.com/css?family=Charm|Crimson+Text|Oxygen" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Charm|Crimson+Text|Oxygen" rel="stylesheet"><meta name="viewport" content="width=device-width,initial-scale=1.0">
     <style>
       body{
           margin: 0;
       }
+      
     </style>
   </head>
   <body>
@@ -35,7 +36,7 @@
           flex-direction: column;
           padding: 15px 90px;
           position: fixed;
-          width: 100%;
+          width: 100vw;
           box-sizing: border-box;
           z-index: 3;
           top: 0;
@@ -77,7 +78,12 @@
           #header button{
               padding: 4px;
               box-sizing: border-box;
-              height: auto;
+          }
+      }
+      
+      @media (min-width: 0px) and (max-width: 668px) {
+          header {
+              padding: 15px;
           }
       }
       
@@ -170,6 +176,7 @@
       }
       .bannerSection h2, .bannerSection h1, .bannerSection button {
           margin: 15px 0;
+          text-align: center;
       }
       .bannerSection a{
           text-decoration: none;
@@ -178,7 +185,15 @@
       @media (min-width: 669px) and (max-width: 991px) {
           .bannerSection h1{
               padding: 0 50px;
-              text-align: center;
+          }
+      }
+      
+      @media (min-width: 0px) and (max-width: 668px) {
+          .bannerSection {
+              height: 500px;
+          }
+          .bannerSection h2, .bannerSection h1, .bannerSection button {
+              margin: 5px 0;
           }
       }
     </style>
@@ -199,6 +214,7 @@
           flex-direction: column;
           align-items: center;
           margin-bottom: 50px;
+          text-align: center;
       }
       .servicesSection .services{
           display: flex;
@@ -219,6 +235,12 @@
       .service h2, .service i, .service p{
           margin: 10px 0;
       }
+      @media (min-width: 0px) and (max-width: 668px) {
+          .services {
+              flex-direction: column;
+          }
+      }
+      
       
     </style>
     <section class="servicesSection" id="services">
@@ -374,7 +396,7 @@
           width: 100vw;
           overflow-x: hidden;
           overflow-y: scroll;
-          z-index: 2;
+          z-index: 4;
           box-sizing: border-box;
           display: none;
           background-color:   rgba(0, 0, 0, 0.5);
@@ -421,6 +443,19 @@
       .portfolioCategoriesContainer {
           display: flex;
           flex-wrap: wrap;
+      }
+      @media (min-width: 0px) and (max-width: 668px) {
+          .portfolioCategory img{
+              width: 300px;
+              height: 300px;
+          }
+          .portfolioCategoriesContainer{
+              flex-direction: column;
+          }
+          .portfolioCategory i {
+              width: 300px;
+              height: 300px; 
+          }
       }
       
     </style>
@@ -677,6 +712,12 @@
       .teamSectionFooter {
           text-align: center;
       } 
+      @media (min-width: 0px) and (max-width: 668px) {
+          .teamSection .team {
+              display: flex;
+              flex-direction: column;
+          }
+      }
     </style>
     <section class="teamSection" id="team">
       <div class="teamSectionHeader">
@@ -763,6 +804,11 @@
       }
       .contactUsSection form button {
           padding 30px;
+      }
+      @media (min-width: 0px) and (max-width: 668px) {
+          .contactUsSection textarea {
+              width: 150px;
+          }
       }
       
     </style>
